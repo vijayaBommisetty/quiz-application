@@ -19,7 +19,7 @@ const Quiz = () => {
       const questionsData =  [
       {
         "question_id": 1,
-        "question": "Whatt famous Roman general and statesman was assassinated on the Ides of March in 44 BC?",
+        "question": "What famous Roman general and statesman was assassinated on the Ides of March in 44 BC?",
         "answer_index": 0,
         "choices": ["Julius Caesar", "Augustus", "Nero", "Caligula"],
         "hint": "He was also a renowned military commander.",
@@ -134,7 +134,7 @@ const Quiz = () => {
       <div>         
         {!quizStarted && (
           <div className="quiz-start">
-            <h2 className="quiz-start-heading">Welcome to the Ancient Rome Quiz!</h2>
+            <h2 className="quiz-start-heading">Welcome to the Ancient Rome Quiz!!</h2>
             <button className="quiz-start-button" onClick={handleStartQuizClick}>Start Test</button>
             <label className="quiz-start-label" htmlFor="numberOfQuestions">Number of questions:</label>
             <select
