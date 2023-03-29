@@ -19,7 +19,7 @@ const Quiz = () => {
       const questionsData =  [
       {
         "question_id": 1,
-        "question": "What famous Roman general and statesman was assassinated on the Ides of March in 44 BC?",
+        "question": "Whatt famous Roman general and statesman was assassinated on the Ides of March in 44 BC?",
         "answer_index": 0,
         "choices": ["Julius Caesar", "Augustus", "Nero", "Caligula"],
         "hint": "He was also a renowned military commander.",
