@@ -17,14 +17,14 @@ const Quiz = () => {
     // Fetch questions from server when quiz starts
     useEffect(() => {
       if (quizStarted && !quizFinished && questions.length === 0) {
-         async function fetchData() 
-           try {
+         async function fetchData(){
+            try {
              const {data} =  await axios.get(`http://localhost:7000/quiz/${selectedNumberOfQuestions}`);
               setQuestions(data.data);
             } catch (error) {
               console.error(error);
             }
-          }
+         } 
           fetchData();
       }
     }, [quizStarted, quizFinished, selectedNumberOfQuestions, questions.length]);
