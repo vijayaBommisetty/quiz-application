@@ -135,7 +135,7 @@ const Quiz = () => {
       <div>         
         {!quizStarted && (
           <div className="quiz-start">
-            <h2 className="quiz-start-heading">Welcome to the Ancient Rome Quiz!!</h2>
+            <h2 className="quiz-start-heading">Welcome to the Ancient Rome Quiz</h2>
             <button className="quiz-start-button" onClick={handleStartQuizClick}>Start Test</button>
             <label className="quiz-start-label" htmlFor="numberOfQuestions">Number of questions:</label>
             <select
