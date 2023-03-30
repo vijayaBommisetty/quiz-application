@@ -19,7 +19,6 @@ const Quiz = () => {
       
        const {data} = await axios.get(`http://localhost:7000/quiz/${selectedNumberOfQuestions}`);
         setQuestions(data.data);
-        //setQuestions(questionsData);
       } catch (error) {
         console.error(error);
       }
@@ -30,7 +29,7 @@ const Quiz = () => {
       if (quizStarted && !quizFinished && questions.length === 0) {
         fetchData();
       }
-    }, [quizStarted, quizFinished, selectedNumberOfQuestions, questions.length]);
+    }, [quizStarted, quizFinished, selectedNumberOfQuestions, questions.length,fetchData]);
 
     // Countdown timer for each question
     useEffect(() => {
