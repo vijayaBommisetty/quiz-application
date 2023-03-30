@@ -15,7 +15,7 @@ const Quiz = () => {
     const [showTimeUp, setShowTimeUp] = useState(false);
 
     // Fetch questions from server when quiz starts
-    useEffect(() => {
+    useEffect(async() => {
       if (quizStarted && !quizFinished && questions.length === 0) {
        try {
          const {data} = await axios.get(`http://localhost:7000/quiz/${selectedNumberOfQuestions}`);
