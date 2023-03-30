@@ -14,22 +14,17 @@ const Quiz = () => {
     const [correctAnswer, setCorrectAnswer] = useState(null);
     const [showTimeUp, setShowTimeUp] = useState(false);
 
-    const fetchData = async () => {
-      try {
-      
-       const {data} = await axios.get(`http://localhost:7000/quiz/${selectedNumberOfQuestions}`);
-        setQuestions(data.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
     // Fetch questions from server when quiz starts
     useEffect(() => {
       if (quizStarted && !quizFinished && questions.length === 0) {
-        fetchData();
+       try {
+         const {data} = await axios.get(`http://localhost:7000/quiz/${selectedNumberOfQuestions}`);
+          setQuestions(data.data);
+        } catch (error) {
+          console.error(error);
+        }
       }
-    }, [quizStarted, quizFinished, selectedNumberOfQuestions, questions.length,fetchData]);
+    }, [quizStarted, quizFinished, selectedNumberOfQuestions, questions.length]);
 
     // Countdown timer for each question
     useEffect(() => {
