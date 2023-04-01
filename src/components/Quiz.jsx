@@ -19,24 +19,21 @@ const Quiz = () => {
     const [correctAnswer, setCorrectAnswer] = useState(null);
     const [showTimeUp, setShowTimeUp] = useState(false);
 
-    const fetchData = async () => {
-      try {
-        let randomQuestions = (_.shuffle(questionsData)).slice(0,selectedNumberOfQuestions);
-       //const {data} = await axios.get(`http://localhost:7000/quiz/${selectedNumberOfQuestions}`);
-        //setQuestions(data.data);
-        setQuestions(randomQuestions);
-      } catch (error) {
-        console.error(error);
-        alert("Oops! Something went wrong. Please try again later.");
-      }
-    };
 
     // Fetch questions from server when quiz starts
     useEffect(() => {
       if (quizStarted && !quizFinished && questions.length === 0) {
-        fetchData();
+        try {
+          let randomQuestions = (_.shuffle(questionsData)).slice(0,selectedNumberOfQuestions);
+         //const {data} = await axios.get(`http://localhost:7000/quiz/${selectedNumberOfQuestions}`);
+          //setQuestions(data.data);
+          setQuestions(randomQuestions);
+        } catch (error) {
+          console.error(error);
+          alert("Oops! Something went wrong. Please try again later.");
+        }
       }
-    }, [fetchData,questions.length,quizStarted, quizFinished, selectedNumberOfQuestions]);
+    }, [questions.length,quizStarted, quizFinished, selectedNumberOfQuestions]);
 
 
     useEffect(() => {
