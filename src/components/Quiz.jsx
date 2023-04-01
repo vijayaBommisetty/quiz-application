@@ -36,7 +36,7 @@ const Quiz = () => {
       if (quizStarted && !quizFinished && questions.length === 0) {
         fetchData();
       }
-    }, [questionsData,quizStarted, quizFinished, selectedNumberOfQuestions]);
+    }, [fetchData,questionsData,quizStarted, quizFinished, selectedNumberOfQuestions]);
 
 
     useEffect(() => {
